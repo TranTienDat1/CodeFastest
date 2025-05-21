@@ -73,12 +73,25 @@ public class MultiFunctionApp extends JFrame {
 
     // Các phương thức xử lý sự kiện
     private void xuLyPhepCong(ActionEvent evt) {
-
+                try {
+            double num1 = Double.parseDouble(txtSo1.getText());
+            double num2 = Double.parseDouble(txtSo2.getText());
+            double result = num1 + num2;
+            txtKetQua.setText(String.valueOf(result));
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "Vui lòng nhập số hợp lệ!", "Lỗi", JOptionPane.ERROR_MESSAGE);
+        }
     }
 
     private void xuLyPhepTru(ActionEvent evt) {
-
-    }
+                try {
+            double num1 = Double.parseDouble(txtSo1.getText());
+            double num2 = Double.parseDouble(txtSo2.getText());
+            double result = num1 - num2;
+            txtKetQua.setText(String.valueOf(result));
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "Vui lòng nhập số hợp lệ!", "Lỗi", JOptionPane.ERROR_MESSAGE);
+        }
 
     private void xuLyPhepNhan(ActionEvent evt) {
         try {
