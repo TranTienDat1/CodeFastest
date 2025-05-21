@@ -104,13 +104,27 @@ public class MathToolsGUI extends JFrame {
         btnFindMax.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-//--
+                try {
+                    double num1 = Double.parseDouble(txtNum1.getText());
+                    double num2 = Double.parseDouble(txtNum2.getText());
+                    double max = Math.max(num1, num2);
+                    txtResult.setText("Số lớn nhất: " + max);
+                } catch (NumberFormatException ex) {
+                    txtResult.setText("Vui lòng nhập số hợp lệ!");
+                }
             }
         });
 
         // Xử lý sự kiện tìm số nhỏ nhất
         btnFindMin.addActionListener(new ActionListener() {
-
+                try {
+                    double num1 = Double.parseDouble(txtNum1.getText());
+                    double num2 = Double.parseDouble(txtNum2.getText());
+                    double min = Math.min(num1, num2);
+                    txtResult.setText("Số nhỏ nhất: " + min);
+                } catch (NumberFormatException ex) {
+                    txtResult.setText("Vui lòng nhập số hợp lệ!");
+                }
         });
 
         // Thêm các thành phần vào panel
@@ -215,8 +229,15 @@ public class MathToolsGUI extends JFrame {
         btnFindGCD.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-//--
-            }
+            	try {
+                    int num1 = Integer.parseInt(txtNum1.getText());
+                    int num2 = Integer.parseInt(txtNum2.getText());
+                    int gcd = findGCD(num1, num2);
+                    txtResult.setText("Ước chung lớn nhất: " + gcd);
+                } catch (NumberFormatException ex) {
+                    txtResult.setText("Vui lòng nhập số nguyên hợp lệ!");
+                }
+            }            }
         });
 
         // Thêm các thành phần vào panel
@@ -252,8 +273,19 @@ public class MathToolsGUI extends JFrame {
         btnSort.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-//--
-            }
+            	try {
+                    double num1 = Double.parseDouble(txtNum1.getText());
+                    double num2 = Double.parseDouble(txtNum2.getText());
+                    
+                    if (num1 <= num2) {
+                        txtResult.setText(num1 + ", " + num2);
+                    } else {
+                        txtResult.setText(num2 + ", " + num1);
+                    }
+                } catch (NumberFormatException ex) {
+                    txtResult.setText("Vui lòng nhập số hợp lệ!");
+                }
+            }            }
         });
 
         // Thêm các thành phần vào panel
