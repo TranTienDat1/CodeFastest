@@ -1,2 +1,0 @@
-# CodeFastest
-Nhóm 3
