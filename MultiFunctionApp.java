@@ -81,7 +81,14 @@ public class MultiFunctionApp extends JFrame {
     }
 
     private void xuLyPhepNhan(ActionEvent evt) {
-
+        try {
+            double num1 = Double.parseDouble(txtSo1.getText());
+            double num2 = Double.parseDouble(txtSo2.getText());
+            double result = num1 * num2;
+            txtKetQua.setText(String.valueOf(result));
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "Vui lòng nhập số hợp lệ!", "Lỗi", JOptionPane.ERROR_MESSAGE);
+        }
     }
 
     private void xuLyTienNuoc(ActionEvent evt) {
@@ -89,7 +96,20 @@ public class MultiFunctionApp extends JFrame {
     }
 
     private void xuLyDienTich(ActionEvent evt) {
-
+        try {
+            double chieuDai = Double.parseDouble(txtSo1.getText());
+            double chieuRong = Double.parseDouble(txtSo2.getText());
+            
+            if (chieuDai <= 0 || chieuRong <= 0) {
+                JOptionPane.showMessageDialog(this, "Chiều dài và chiều rộng phải > 0!", "Lỗi", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            
+            double dienTich = chieuDai * chieuRong;
+            txtKetQua.setText(String.valueOf(dienTich));
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "Vui lòng nhập số hợp lệ!", "Lỗi", JOptionPane.ERROR_MESSAGE);
+        }
     }
 
     private void xuLyKiemTraChiaHet(ActionEvent evt) {
