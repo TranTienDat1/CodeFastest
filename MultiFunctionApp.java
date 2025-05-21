@@ -158,7 +158,7 @@ public class MultiFunctionApp extends JFrame {
              JOptionPane.showMessageDialog(this, "Vui lòng nhập số hợp lệ!", "Lỗi", JOptionPane.ERROR_MESSAGE);
          }
     }
-
+    //123
     public static void main(String[] args) {
         // Chạy ứng dụng
         SwingUtilities.invokeLater(() -> {
