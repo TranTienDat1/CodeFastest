@@ -105,7 +105,21 @@ public class MultiFunctionApp extends JFrame {
     }
 
     private void xuLyTienNuoc(ActionEvent evt) {
-
+    	try {
+            double soDau = Double.parseDouble(txtSo1.getText());
+            double soCuoi = Double.parseDouble(txtSo2.getText());
+            
+            if (soCuoi < soDau) {
+                JOptionPane.showMessageDialog(this, "Số cuối phải lớn hơn số đầu!", "Lỗi", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            
+            double tienNuoc = (soCuoi - soDau) * 10000;
+            txtKetQua.setText(String.format("%,.0f VND", tienNuoc));
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "Vui lòng nhập số hợp lệ!", "Lỗi", JOptionPane.ERROR_MESSAGE);
+        }
+    
     }
 
     private void xuLyDienTich(ActionEvent evt) {
@@ -126,7 +140,23 @@ public class MultiFunctionApp extends JFrame {
     }
 
     private void xuLyKiemTraChiaHet(ActionEvent evt) {
-
+    	 try {
+    		 double a = Double.parseDouble(txtSo1.getText());
+             double b = Double.parseDouble(txtSo2.getText());
+             
+             if (b == 0) {
+                 JOptionPane.showMessageDialog(this, "Số thứ hai phải khác 0!", "Lỗi", JOptionPane.ERROR_MESSAGE);
+                 return;
+             }
+             
+             if (a % b == 0) {
+                 txtKetQua.setText(a + " chia hết cho " + b);
+             } else {
+                 txtKetQua.setText(a + " KHÔNG chia hết cho " + b);
+             }
+         } catch (NumberFormatException ex) {
+             JOptionPane.showMessageDialog(this, "Vui lòng nhập số hợp lệ!", "Lỗi", JOptionPane.ERROR_MESSAGE);
+         }
     }
 
     public static void main(String[] args) {
